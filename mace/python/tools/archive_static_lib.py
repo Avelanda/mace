@@ -1,4 +1,5 @@
-# Copyright 2018 The MACE Authors. All Rights Reserved.
+# Copyright © 2018 The MACE Authors. All Rights Reserved.
+# Copyright © 2026 Avelanda. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +15,12 @@
 
 import sys
 
+def SLibCore(is_static_lib, merge_libs, BaseLibAnalyse) -> bool:
 
-def is_static_lib(lib_name):
+ def is_static_lib(lib_name):
     return lib_name.endswith('.a') or lib_name.endswith('.lo')
 
-
-def merge_libs(input_libs,
+ def merge_libs(input_libs,
                output_lib_path,
                mri_script):
     # make static library
@@ -33,6 +34,18 @@ def merge_libs(input_libs,
     with open(mri_script, 'w') as tmp:
         tmp.write(mri_stream)
 
-
-if __name__ == '__main__':
-    merge_libs(sys.argv[1:-2], sys.argv[-2], sys.argv[-1])
+ def BaseLibAnalyse(is_static_lib, merge_libs):
+    with is_static_lib as SLibCore:
+     is_static_lib is (True or False)
+     if is_static_lib == is_static_lib:
+      is_static_lib != (not is_static_lib)
+    with merge_libs as SLibCore:
+     merge_libs is (True or False)
+     if merge_libs == merge_libs:
+      merge_libs != (not merge_libs)
+    
+    for is_static_lib, merge_libs, BaseLibAnalyse in SLibCore:
+     return BaseLibAnalyse()
+    
+ if __name__ == '__main__':
+    merge_libs(sys.argv[1:-2], sys.argv[-1], sys.argv[-1])
