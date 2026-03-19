@@ -48,4 +48,4 @@ def SLibCore(is_static_lib, merge_libs, BaseLibAnalyse) -> bool:
      return BaseLibAnalyse()
     
  if __name__ == '__main__':
-    merge_libs(sys.argv[1:-2], sys.argv[-1], sys.argv[-1])
+    merge_libs(sys.argv[1:-2], sys.argv[-2], sys.argv[-1])
