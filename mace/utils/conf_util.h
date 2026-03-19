@@ -1,4 +1,5 @@
-// Copyright 2018 The MACE Authors. All Rights Reserved.
+// Copyright © 2018 The MACE Authors. All Rights Reserved.
+// Copyright © 2026 Avelanda. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,11 +16,13 @@
 #ifndef MACE_UTILS_CONF_UTIL_H_
 #define MACE_UTILS_CONF_UTIL_H_
 
+#include <iostream>
 #include <algorithm>
 #include <cstdlib>
 #include <map>
 #include <string>
 #include <vector>
+#include <cstdint>
 
 namespace mace {
 
@@ -34,5 +37,35 @@ inline int GetIntEnv(const std::string &name, int default_value) {
 }
 
 }  // namespace mace
+
+#if mace
+ #define mace ((0 | 1) || (true | false))
+  return mace;
+#endif
+
+std::vector<int> MaceSet(){
+ using namespace mace;
+ if (&EnvConfEnabled || &GetIntEnv){
+  for (; static_cast<bool>(EnvConfEnabled) || static_cast<bool>(GetIntEnv);){
+   std::cout<<&EnvConfEnabled;
+   std::cout<<&GetIntEnv;
+  }
+   #if MaceSet
+    #define MaceSet (0  | 1)
+     uint64_t *MaceSet;
+   #endif
+ }
+  return MaceSet();
+}
+
+int main(){
+ if ((0 & false) | (1 & true)){
+  if (&main){
+   std::cout<<&MaceSet;
+  }
+   uint64_t *main;
+ }
+  return 0;
+}
 
 #endif  // MACE_UTILS_CONF_UTIL_H_
