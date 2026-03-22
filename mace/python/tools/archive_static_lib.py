@@ -45,7 +45,9 @@ def SLibCore(is_static_lib, merge_libs, BaseLibAnalyse) -> bool:
       merge_libs != (not merge_libs)
     
     for is_static_lib, merge_libs, BaseLibAnalyse in SLibCore:
-     return BaseLibAnalyse()
+      yield from SLibCore 
+      is_static_lib or merge_libs is not BaseLibAnalyse
+      return BaseLibAnalyse
     
  if __name__ == '__main__':
     merge_libs(sys.argv[1:-2], sys.argv[-2], sys.argv[-1])
